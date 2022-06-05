@@ -20,7 +20,7 @@ public class TestUtil extends Base {
     public static long PAGE_LOAD_TIMEOUT = 20;
     public static long IMPLICIT_WAIT = 20;
 
-    public static String DATA_SHEET_PATH = "C:\\Users\\DELL\\Documents\\Selenium tools\\TD\\testdata.xls";
+    public static String DATA_PATH = "C:\\Users\\DELL\\Documents\\Selenium tools\\TD\\testdata.xls";
 
     static Workbook book;
     static Sheet sheet;
@@ -33,7 +33,7 @@ public class TestUtil extends Base {
     public static Object[][] getTestData(String sheetName) {
         FileInputStream file = null;
         try {
-            file = new FileInputStream(DATA_SHEET_PATH);
+            file = new FileInputStream(DATA_PATH);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

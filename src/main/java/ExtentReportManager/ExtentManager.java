@@ -23,7 +23,7 @@ public class ExtentManager implements IReporter {
 
     @Override
     public void generateReport(List<XmlSuite> list, List<ISuite> list1, String s) {
-        extent = new ExtentReports(s + File.separator + "JobSeakerReport.html", true);
+        extent = new ExtentReports(s + File.separator + "SeleniumTest.html", true);
 
     for(ISuite suite : list1) {
         Map<String, ISuiteResult> result = suite.getResults();

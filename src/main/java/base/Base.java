@@ -5,14 +5,13 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
-
+import com.epam.healenium.SelfHealingDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import util.TestUtil;
-
 
 public class Base {
 
@@ -37,18 +36,18 @@ public class Base {
         }
     }
 
-
     public static void initialization() {
         String browserName = prop.getProperty("browser");
 
         if (browserName.equals("chrome")) {
-            WebDriverManager.chromedriver().version("100.0.4896.60/").setup();
-            driver = new ChromeDriver();
+            WebDriverManager.chromedriver().version("102.0.5005.61/").setup();
+            WebDriver delegate = new ChromeDriver();
+            driver = SelfHealingDriver.create(delegate);
+            //driver = new ChromeDriver();
         } else if (browserName.equals("FF")) {
             WebDriverManager.firefoxdriver().setup();
-            driver = new FirefoxDriver();
+            driver = (SelfHealingDriver) new FirefoxDriver();
         }
-
 
 //		e_driver = new EventFiringWebDriver(driver);
 //		// Now create object of EventListerHandler to register it with EventFiringWebDriver

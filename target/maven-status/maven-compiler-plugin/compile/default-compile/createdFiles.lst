@@ -1,0 +1,7 @@
+pages\CandidateLoginPage.class
+pages\HomePage.class
+pages\WelcomePage.class
+ExtentReportManager\ExtentManager.class
+pages\CVPage.class
+util\TestUtil.class
+base\Base.class
