@@ -10,6 +10,7 @@
         <classes>
             <class name="testcase.CandidateLoginPageTest"></class>
             <class name="testcase.CVPageTest"></class>
+            <class name="testcase.HomePageTest"></class>
         </classes>
     </test>
 </suite>

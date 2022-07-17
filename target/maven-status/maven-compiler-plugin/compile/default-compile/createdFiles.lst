@@ -1,5 +1,6 @@
 pages\CandidateLoginPage.class
 pages\HomePage.class
+pages\EmployeeLoginPage.class
 pages\WelcomePage.class
 ExtentReportManager\ExtentManager.class
 pages\CVPage.class

@@ -1,6 +1,7 @@
 package testcase;
 
 import base.Base;
+import org.testng.Reporter;
 import pages.CVPage;
 import pages.HomePage;
 import pages.CandidateLoginPage;
@@ -42,7 +43,10 @@ public class CandidateLoginPageTest extends Base{
     @Test(priority = 1)
     public void loginPageLogoTest() {
         String title = candidateLoginPage.validateLoginPageTitle();
+
         Assert.assertTrue(candidateLoginPage.validateLogo());
+        Reporter.log("test assert logo");
+
     }
 
     @Test(priority = 2, dataProvider = "LoginData")
