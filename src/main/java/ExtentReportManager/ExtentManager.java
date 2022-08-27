@@ -57,6 +57,8 @@ public class ExtentManager implements IReporter {
 
                     if (result.getThrowable() != null) {
                         test.log(status, result.getThrowable());
+                        test.log(status, "Test " + status.toString().toLowerCase()
+                                + " ");
                     } else {
                         test.log(status, "Test " + status.toString().toLowerCase()
                                 + " ");
@@ -73,3 +75,4 @@ public class ExtentManager implements IReporter {
         return c.getTime();
     }
 }
+

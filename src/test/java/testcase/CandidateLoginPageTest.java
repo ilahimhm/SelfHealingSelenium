@@ -1,6 +1,8 @@
 package testcase;
 
 import base.Base;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.Reporter;
 import pages.CVPage;
 import pages.HomePage;
@@ -8,6 +10,8 @@ import pages.CandidateLoginPage;
 //import util.ExcelUtil;
 import org.testng.Assert;
 import org.testng.annotations.*;
+import util.Log;
+
 import java.lang.reflect.Method;
 
 
@@ -20,6 +24,7 @@ public class CandidateLoginPageTest extends Base{
     public CandidateLoginPageTest() {
         super();
     }
+    public static final Logger LOGGER = LoggerFactory.getLogger(CandidateLoginPageTest.class);
 
 /*
     @BeforeTest
@@ -29,12 +34,13 @@ public class CandidateLoginPageTest extends Base{
     }
 
  */
-
     @BeforeMethod
-    public void setUp() {
+    public void setup(){
         initialization();
         homePage = new HomePage();
         homePage.clickCandidateButton();
+        Log.warn("log");
+        Log.info("Healing using 'candidateBtn1' element ");
         candidateLoginPage = new CandidateLoginPage();
     }
 
@@ -43,10 +49,8 @@ public class CandidateLoginPageTest extends Base{
     @Test(priority = 1)
     public void loginPageLogoTest() {
         String title = candidateLoginPage.validateLoginPageTitle();
-
         Assert.assertTrue(candidateLoginPage.validateLogo());
         Reporter.log("test assert logo");
-
     }
 
     @Test(priority = 2, dataProvider = "LoginData")

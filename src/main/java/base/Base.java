@@ -40,7 +40,7 @@ public class Base {
         String browserName = prop.getProperty("browser");
 
         if (browserName.equals("chrome")) {
-            WebDriverManager.chromedriver().version("102.0.5005.61/").setup();
+            WebDriverManager.chromedriver().version("104.0.5112.79/").setup();
             WebDriver delegate = new ChromeDriver();
             driver = SelfHealingDriver.create(delegate);
             //driver = new ChromeDriver();

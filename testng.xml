@@ -3,14 +3,12 @@
 <suite name="Job-Seeker application Automation Test Suite">
 
     <listeners>
-        <listener class-name="ExtentReportManager.ExtentManager" />
+         <listener class-name="com.epam.reportportal.testng.ReportPortalTestNGListener"/>
     </listeners>
 
     <test name="Job-seeker application Functional test cases">
         <classes>
             <class name="testcase.CandidateLoginPageTest"></class>
-            <class name="testcase.CVPageTest"></class>
-            <class name="testcase.HomePageTest"></class>
         </classes>
     </test>
 </suite>
